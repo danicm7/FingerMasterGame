@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.manageFingers.ManagePlayersFingers"
+    android:background="@color/custom_grey">
+
+
+    <TextView
+        style="@style/CustomtextViewTittle"
+        android:id="@+id/manage_fingers_player_name_title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/player_data_player_name_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/size.10"
+        android:layout_marginStart="@dimen/size.10"
+        android:paddingTop="@dimen/size.10"
+        />
+
+    <TextView
+        android:id="@+id/manage_fingers_player_name_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textColor="@color/app_main_color"
+        android:textSize="@dimen/textSize.50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_fingers_player_name_title_textview"
+        android:paddingBottom="@dimen/size.40"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/manage_fingers_player_name_textview"
+        android:id="@+id/manage_fingers_number_container"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        >
+        <ImageButton
+            style="@style/CustomButton"
+            android:id="@+id/manage_fingers_minus_button"
+            android:src="@drawable/minus_asset" />
+        <TextView
+            style="@style/FingerTextViewCounter"
+            android:id="@+id/manage_fingers_number_textview"
+            />
+        <ImageButton
+            style="@style/CustomButton"
+            android:id="@+id/manage_fingers_plus_button"
+            android:src="@drawable/plus_asset"/>
+    </LinearLayout>
+
+
+
+    <TextView
+        style="@style/CustomtextViewTittle"
+        android:id="@+id/manage_fingers_issue_title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/player_data_issue_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_fingers_number_container"
+        android:layout_marginEnd="@dimen/size.10"
+        android:layout_marginStart="@dimen/size.10"
+        android:paddingTop="@dimen/size.40"
+        />
+
+    <EditText
+        style="@style/CustomEditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/manage_fingers_issue_textview"
+        android:hint="@string/manage_player_issue_hint_text"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_fingers_issue_title_textview"
+        android:layout_marginEnd="@dimen/size.10"
+        android:layout_marginStart="@dimen/size.10"
+        />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/manage_fingers_save_button"
+        android:src="@drawable/lock_icon"
+        android:layout_marginEnd="@dimen/size.10"
+        android:layout_marginStart="@dimen/size.10"
+        android:layout_marginBottom="@dimen/size.10"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

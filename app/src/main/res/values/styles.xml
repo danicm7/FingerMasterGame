@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomEditTextStyle">
+        <item name="android:textSelectHandle">@drawable/custom_handle_cursor</item>
+        <item name="android:textSelectHandleLeft">@drawable/custom_handle_cursor</item>
+        <item name="android:textSelectHandleRight">@drawable/custom_handle_cursor</item>
+        <item name="android:backgroundTint">@color/app_secondary_color</item>
+        <item name="android:textCursorDrawable">@drawable/custom_text_cursor</item>
+        <item name="android:textColor">@color/app_main_color</item>
+        <item name="android:textSize">@dimen/textSize.20</item>
+        <item name="android:textColorHint">@color/app_main_color</item>
+        <item name="android:backgroundTintMode">screen</item>
+    </style>
+
+    <style name="CustomtextViewTittle">
+        <item name="android:gravity">start</item>
+        <item name="android:textColor">@color/app_secondary_color</item>
+        <item name="android:textSize">@dimen/textSize.16</item>
+    </style>
+
+    <style name="CustomButton">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_width">@dimen/size.70</item>
+        <item name="android:layout_height">@dimen/size.70</item>
+    </style>
+
+    <style name="FingerTextViewCounter">
+        <item name="android:minHeight">@dimen/size.70</item>
+        <item name="android:minWidth">@dimen/size.110</item>
+        <item name="android:textSize">@dimen/textSize.50</item>
+        <item name="android:textColor">@color/app_main_color</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:clickable">false</item>
+        <item name="android:text">0</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+</resources>
