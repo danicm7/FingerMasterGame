@@ -38,7 +38,6 @@ private HomeFragmentRecyclerAdapter adapter;
         this.adapter = new HomeFragmentRecyclerAdapter(loadData());
         this.recyclerView.setAdapter(this.adapter);
 
-
     }
 
     private ArrayList loadData() {
@@ -64,7 +63,6 @@ private HomeFragmentRecyclerAdapter adapter;
         data.add(playerDataModel6);
         data.add(playerDataModel7);
         data.add(playerDataModel8);
-
 
         return data;
     }

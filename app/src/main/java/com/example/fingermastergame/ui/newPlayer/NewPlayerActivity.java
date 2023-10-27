@@ -1,10 +1,8 @@
 package com.example.fingermastergame.ui.newPlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import com.example.fingermastergame.R;
 
 public class NewPlayerActivity extends AppCompatActivity {
