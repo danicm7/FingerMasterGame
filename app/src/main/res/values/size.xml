@@ -9,11 +9,14 @@
     <dimen name="size.50">50dp</dimen>
     <dimen name="size.60">60dp</dimen>
     <dimen name="size.70">70dp</dimen>
-    <dimen name="size.90">80dp</dimen>
-    <dimen name="size.100">90dp</dimen>
-    <dimen name="size.110">100dp</dimen>
-    <dimen name="size.120">110dp</dimen>
-    <dimen name="size.130">120dp</dimen>
+    <dimen name="size.90">90dp</dimen>
+    <dimen name="size.100">100dp</dimen>
+    <dimen name="size.110">110dp</dimen>
+    <dimen name="size.120">120dp</dimen>
+    <dimen name="size.130">130dp</dimen>
+    <dimen name="size.140">140dp</dimen>
+    <dimen name="size.150">150dp</dimen>
+
 
     <!-- End Region -->
 

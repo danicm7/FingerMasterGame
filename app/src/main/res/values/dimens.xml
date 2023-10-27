@@ -9,4 +9,16 @@
     <dimen name="nav_header_title_textSize">20sp</dimen>
     <dimen name="home_fragment_imageView_size">90dp</dimen>
 
+    <!-- Finger checkbox Style -->
+    <dimen name="fingerCheckboxHeight">30dp</dimen>
+    <dimen name="fingerCheckboxWidth">30dp</dimen>
+    <dimen name="fingerCheckboxWidthMargin">5dp</dimen>
+    <dimen name="fingerCheckboxHeightMargin">5dp</dimen>
+
+    <!-- Player name TextField -->
+    <dimen name="playerNameMargin">10dp</dimen>
+
+    <!-- Fingers Linear Layout -->
+    <dimen name="fingersLinearLayoutVerticalMargins">10dp</dimen>
+
 </resources>

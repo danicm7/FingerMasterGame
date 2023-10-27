@@ -28,12 +28,7 @@ public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements 
                 itemView.findViewById(R.id.checkBox_state_1)
                 ,itemView.findViewById(R.id.checkBox_state_2)
                 ,itemView.findViewById(R.id.checkBox_state_3)
-                ,itemView.findViewById(R.id.checkBox_state_4)
-                ,itemView.findViewById(R.id.checkBox_state_5)
-                ,itemView.findViewById(R.id.checkBox_state_6)
-                ,itemView.findViewById(R.id.checkBox_state_7)
-                ,itemView.findViewById(R.id.checkBox_state_8)
-                ,itemView.findViewById(R.id.checkBox_state_9)};
+                ,itemView.findViewById(R.id.checkBox_state_4)};
 
     }
 
