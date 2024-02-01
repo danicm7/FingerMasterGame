@@ -13,9 +13,10 @@ import android.widget.Toast;
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.ui.playerData.IssueModel;
 import com.example.fingermastergame.ui.playerData.PlayerDataModel;
+import com.example.fingermastergame.ui.storage.ManageStorage;
 
 
-public class ManagePlayersFingers extends AppCompatActivity {
+public class ManagePlayersFingersController extends AppCompatActivity {
     private PlayerDataModel playerDataModel;
     private ImageButton plusButton, minusButton, saveButton;
     private TextView numberTextView, playerNameTextView, issueTextView;
@@ -58,19 +59,21 @@ public class ManagePlayersFingers extends AppCompatActivity {
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final int previousValue = Integer.parseInt((String) numberTextView.getText());
-                String nextValue = String.valueOf(previousValue+1);
-                checkDisableButtons(Integer.parseInt(nextValue));
-                numberTextView.setText(nextValue);
+                final int previousValue = Integer.parseInt(numberTextView.getText().toString());
+                final int nextValue =previousValue+1;
+                if (checkPlusButtons(nextValue)) {
+                    numberTextView.setText(nextValue);
+                }
             }
         });
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final int previousValue = Integer.parseInt((String) numberTextView.getText());
-                String nextValue = String.valueOf(previousValue-1);
-                checkDisableButtons(Integer.parseInt(nextValue));
-                numberTextView.setText(nextValue);
+                final int previousValue = Integer.parseInt(numberTextView.getText().toString());
+                final int nextValue = previousValue-1;
+                if(checkPlusButtons(nextValue)){
+                    numberTextView.setText(nextValue);
+                }
             }
         });
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -78,12 +81,14 @@ public class ManagePlayersFingers extends AppCompatActivity {
             public void onClick(View view) {
                 final String issue = String.valueOf(issueTextView.getText());
                 final int fingers = Integer.parseInt(numberTextView.getText().toString());
-                final IssueModel  issueModel = new IssueModel(issue);
+                final IssueModel issueModel = new IssueModel(issue);
+                final String playerName = playerDataModel.getName();
 
                 if(issue.isBlank() || issue == null){
                     showToast(getBaseContext().getString(R.string.issue_empty));
                 }else{
-                    updatePlayerData(fingers, issueModel);
+                    updatePlayerData(playerName, fingers, issueModel);
+                    finish();
                 }
             }
         });
@@ -114,24 +119,23 @@ public class ManagePlayersFingers extends AppCompatActivity {
         Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
     }
 
-    private void updatePlayerData(int fingers, IssueModel issueModel) {
+    private void updatePlayerData(String playerName, int fingers, IssueModel issueModel) {
         //save data
-        savePlayerData();
+        playerDataModel.setIssue(issueModel);
+        savePlayerData(playerDataModel);
     }
 
-    private void savePlayerData() {
+    private void savePlayerData(PlayerDataModel playerDataModel) {
         //save data
-
+        ManageStorage manageStorage = new ManageStorage(this.getApplicationContext());
+        manageStorage.setPlayerData(playerDataModel);
     }
 
-    private void checkDisableButtons(int currentValue) {
-        final int maxValue = this.getResources().getInteger(R.integer.max_fingers);
-        final int minValue = this.getResources().getInteger(R.integer.min_fingers);
+    private boolean checkPlusButtons(int currentValue) {
+        final int maxValue = this.getResources().getInteger(R.integer.max_fingers_edit);
+        final int minValue = this.getResources().getInteger(R.integer.min_fingers_edit);
 
-        this.plusButton.setClickable(currentValue < maxValue);
-        this.minusButton.setClickable(currentValue > minValue);
+        return currentValue <= maxValue && currentValue >= minValue;
     }
-
-
 
 }

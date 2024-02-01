@@ -6,7 +6,6 @@ import com.example.fingermastergame.ui.playerData.PlayerDataModel;
 
 public class HomeViewModel extends ViewModel {
 
-   // private final MutableLiveData<PlayerData> livePlayerData;
      private final PlayerDataModel livePlayerDataModel = new PlayerDataModel();
 
 

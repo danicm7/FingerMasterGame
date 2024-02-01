@@ -12,10 +12,10 @@
         android:theme="@style/Theme.FingerMasterGame"
         tools:targetApi="31">
         <activity
-            android:name=".ui.newPlayer.NewPlayerActivity"
+            android:name=".ui.newPlayer.NewPlayerActivityController"
             android:exported="false" />
         <activity
-            android:name=".ui.manageFingers.ManagePlayersFingers"
+            android:name=".ui.manageFingers.ManagePlayersFingersController"
             android:exported="false" />
         <activity
             android:name=".navigationDrawerMenu"

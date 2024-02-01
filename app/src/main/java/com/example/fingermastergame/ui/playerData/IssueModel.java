@@ -1,6 +1,7 @@
 package com.example.fingermastergame.ui.playerData;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class IssueModel  implements Serializable {
     private String description = "";

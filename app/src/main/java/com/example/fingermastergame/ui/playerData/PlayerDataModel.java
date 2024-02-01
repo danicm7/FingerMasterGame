@@ -1,27 +1,23 @@
 package com.example.fingermastergame.ui.playerData;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class PlayerDataModel implements Serializable {
-    private int fingers = 5;
+    private int fingers = -1;
     private String name = "";
-    private IssueModel issueModel = new IssueModel("");
+    private ArrayList<IssueModel> issueModel = new ArrayList<IssueModel>();
 
-    public PlayerDataModel(int fingers, String name, IssueModel issueModel) {
-        this.fingers = fingers;
+    public PlayerDataModel(String name, int fingers) {
         this.name = name;
-        this.issueModel = issueModel;
+        this.fingers = fingers;
     }
 
     public PlayerDataModel() {
     }
 
     public int getFingers() {
-        return fingers;
-    }
-
-    public void setFingers(int fingers) {
-        this.fingers = fingers;
+        return fingers-getIssue().size();
     }
 
     public String getName() {
@@ -32,11 +28,11 @@ public class PlayerDataModel implements Serializable {
         this.name = name;
     }
 
-    public IssueModel getIssue() {
+    public ArrayList<IssueModel> getIssue() {
         return issueModel;
     }
 
     public void setIssue(IssueModel issueModel) {
-        this.issueModel = issueModel;
+        this.issueModel.add(issueModel);
     }
 }

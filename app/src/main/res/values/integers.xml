@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="max_fingers">10</integer>
-    <integer name="min_fingers">-10</integer>
+    <integer name="max_fingers_edit">1</integer>
+    <integer name="min_fingers_edit">1</integer>
     <integer name="initial_fingers">5</integer>
 
 </resources>

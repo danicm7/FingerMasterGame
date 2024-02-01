@@ -1,6 +1,5 @@
 package com.example.fingermastergame.ui.home.homeFragmentRecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.manageFingers.ManagePlayersFingers;
+import com.example.fingermastergame.ui.manageFingers.ManagePlayersFingersController;
 import com.example.fingermastergame.ui.playerData.PlayerDataModel;
 
 public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -50,7 +49,7 @@ public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements 
 
     @Override
     public void onClick(View view) {
-        Intent i = new Intent(itemView.getContext(), ManagePlayersFingers.class);
+        Intent i = new Intent(itemView.getContext(), ManagePlayersFingersController.class);
         i.putExtra(itemView.getContext().getString(R.string.player_data_model), getPlayerDataModel());
         itemView.getContext().startActivity(i);
     }

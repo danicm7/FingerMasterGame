@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.manageFingers.ManagePlayersFingers"
+    tools:context=".ui.manageFingers.ManagePlayersFingersController"
     android:background="@color/custom_grey">
 
 
@@ -54,7 +54,7 @@
         <ImageButton
             style="@style/CustomButton"
             android:id="@+id/manage_fingers_plus_button"
-            android:src="@drawable/plus_asset"/>
+            android:src="@drawable/plus_asset" />
     </LinearLayout>
 
 

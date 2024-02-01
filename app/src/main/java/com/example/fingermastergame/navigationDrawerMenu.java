@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
-import com.example.fingermastergame.ui.newPlayer.NewPlayerActivity;
+import com.example.fingermastergame.ui.newPlayer.NewPlayerActivityController;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -49,7 +49,7 @@ private ActivityNavigationDrawerMenuBinding binding;
     }
 
     private void openAddPlayerScreen() {
-        Intent intent = new Intent(this, NewPlayerActivity.class);
+        Intent intent = new Intent(this, NewPlayerActivityController.class);
         startActivity(intent);
     }
 

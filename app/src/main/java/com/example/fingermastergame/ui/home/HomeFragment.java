@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.fingermastergame.databinding.FragmentHomeBinding;
 import com.example.fingermastergame.ui.home.homeFragmentRecyclerView.HomeFragmentRecyclerAdapter;
-import com.example.fingermastergame.ui.playerData.IssueModel;
-import com.example.fingermastergame.ui.playerData.PlayerDataModel;
+import com.example.fingermastergame.ui.storage.ManageStorage;
 
 import java.util.ArrayList;
 
@@ -41,35 +40,20 @@ private HomeFragmentRecyclerAdapter adapter;
     }
 
     private ArrayList loadData() {
-        return loadTestdata();
-    }
-
-    private ArrayList loadTestdata() {
-        ArrayList data = new ArrayList<PlayerDataModel>();
-        PlayerDataModel playerDataModel = new PlayerDataModel(3,"Laura", new IssueModel("issue description"));
-        PlayerDataModel playerDataModel2 = new PlayerDataModel(2,"Jose", new IssueModel("issue description"));
-        PlayerDataModel playerDataModel3 = new PlayerDataModel(4,"Dani", new IssueModel("issue description"));
-        PlayerDataModel playerDataModel4 = new PlayerDataModel(5,"Adam", new IssueModel("issue description"));
-        PlayerDataModel playerDataModel5 = new PlayerDataModel(1,"Oscar", new IssueModel("issue description"));
-        PlayerDataModel playerDataModel6 = new PlayerDataModel(3,"Maria", new IssueModel("issue description"));
-        PlayerDataModel playerDataModel7 = new PlayerDataModel(1,"Jorge", new IssueModel("issue description"));
-        PlayerDataModel playerDataModel8 = new PlayerDataModel(5,"Judith", new IssueModel("issue description"));
-
-        data.add(playerDataModel);
-        data.add(playerDataModel2);
-        data.add(playerDataModel3);
-        data.add(playerDataModel4);
-        data.add(playerDataModel5);
-        data.add(playerDataModel6);
-        data.add(playerDataModel7);
-        data.add(playerDataModel8);
-
-        return data;
+        return new ManageStorage(getContext()).getAllPlayers();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        refreshData();
+    }
+    private void refreshData(){
+        configureRecyclerView();
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.newPlayer.NewPlayerActivity"
+    tools:context=".ui.newPlayer.NewPlayerActivityController"
     android:background="@color/custom_grey">
 
     <TextView
@@ -35,5 +35,15 @@
         app:layout_constraintTop_toBottomOf="@+id/new_players_name_tittle"
         android:layout_marginEnd="@dimen/size.10"
         />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/new_player_save_button"
+        android:src="@drawable/lock_icon"
+        android:layout_marginEnd="@dimen/size.10"
+        android:layout_marginStart="@dimen/size.10"
+        android:layout_marginBottom="@dimen/size.10"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

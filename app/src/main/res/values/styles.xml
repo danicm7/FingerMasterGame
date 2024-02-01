@@ -15,7 +15,8 @@
     <style name="CustomtextViewTittle">
         <item name="android:gravity">start</item>
         <item name="android:textColor">@color/app_secondary_color</item>
-        <item name="android:textSize">@dimen/textSize.16</item>
+        <item name="android:textSize">@dimen/textSize.28</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
     <style name="CustomButton">
@@ -32,9 +33,10 @@
         <item name="android:textColor">@color/app_main_color</item>
         <item name="android:textAlignment">center</item>
         <item name="android:clickable">false</item>
-        <item name="android:text">0</item>
+        <item name="android:text">1</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">phone</item>
     </style>
 
 
