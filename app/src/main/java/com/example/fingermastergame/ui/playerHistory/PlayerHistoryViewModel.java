@@ -26,17 +26,20 @@ public class PlayerHistoryViewModel extends ViewModel {
         }
         return names;
     }
-    public ArrayList<IssueModel> getIssuesByName(String name, Context c){
+    public String getIssuesByName(String name, Context c){
         final ArrayList<PlayerDataModel> n = this.getAllPlayersData(c);
         final Iterator<PlayerDataModel> it = n.iterator();
+        String issues = "";
 
         while (it.hasNext()){
             final PlayerDataModel player = it.next();
             if (player.getName().equals(name)){
-                return player.getIssue();
+                for(int i = 0; i < player.getIssue().size(); i++){
+                    issues = issues + "\n- " + player.getIssue().get(i).getDescription();
+                }
             }
         }
-        return null;
+        return issues;
     }
 
     protected PlayerDataModel getPlayerByName(String name){

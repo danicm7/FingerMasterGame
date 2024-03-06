@@ -41,13 +41,8 @@ public class PlayerHistoryResume extends AppCompatActivity {
 
         final Context c = new navigationDrawerMenu().getContext();
         final PlayerHistoryViewModel playerHistoryViewModel = new PlayerHistoryViewModel();
-        final ArrayList<IssueModel> issues = playerHistoryViewModel.getIssuesByName(name, c);
-        String print = "";
-        for (int i = 0; issues.size() > i; i++){
-            print = print + "\n\n-" + issues.get(i).getDescription();
-        }
-
-        textView.setText(print);
+        final String issues = playerHistoryViewModel.getIssuesByName(name, c);
+        textView.setText(issues);
     }
 
     @Override
