@@ -4,18 +4,12 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/fingersLinearLayoutVerticalMargins"
     android:orientation="horizontal"
+    android:gravity="center_horizontal"
     android:paddingBottom="@dimen/size.5">
 <TextView
-    android:layout_width="@dimen/size.150"
-    android:layout_height="@dimen/size.30"
-    android:layout_marginStart="@dimen/playerNameMargin"
-    android:id="@+id/text_view_view_holder"
-    android:textSize="@dimen/textSize.16"
-    android:textColor="@color/white"
-    android:background="@color/app_main_color"
-    android:textAlignment="center"
-    android:textAllCaps="true"
-    android:gravity="center"/>
+    style="@style/nameViewholder"
+    android:id="@+id/name_view_holder_home_fragment"
+/>
 
     <ImageView
         android:id="@+id/checkBox_state_0"

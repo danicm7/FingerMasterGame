@@ -16,11 +16,11 @@
     <string name="player_data_model">player_data_model</string>
     <string name="player_data_name">player_data_name</string>
     <string name="player_data_fingers">player_data_fingers</string>
-    <string name="player_data_player_name_title">Player name:</string>
-    <string name="player_data_issue_title">Issue:</string>
+    <string name="player_data_player_name_title">PLAYER NAME:</string>
+    <string name="player_data_issue_title">ISSUE:</string>
     <string name="manage_player_issue_hint_text">ISSUE DESCRIPTION</string>
     <string name="issue_empty">Issue description is blank</string>
-    <string name="new_player_name_tittle">Name of the new player:</string>
+    <string name="new_player_name_tittle">New player name:</string>
     <string name="new_player_name_hint">Player name</string>
     <string name="player_data_storage_path">playersData.json</string>
     <string name="error_empty_name">Name of player is empty!</string>

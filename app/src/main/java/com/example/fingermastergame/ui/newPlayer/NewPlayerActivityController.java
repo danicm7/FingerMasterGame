@@ -2,6 +2,7 @@ package com.example.fingermastergame.ui.newPlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -27,7 +28,12 @@ public class NewPlayerActivityController extends AppCompatActivity {
         setContentView(R.layout.activity_new_player);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         bindViews();
+        configure();
         configureClicklisteners();
+    }
+
+    private void configure() {
+        playerNameTextView.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
     }
 
     private void bindViews() {

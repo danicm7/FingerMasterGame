@@ -18,8 +18,8 @@ import com.example.fingermastergame.ui.storage.ManageStorage;
 
 public class ManagePlayersFingersController extends AppCompatActivity {
     private PlayerDataModel playerDataModel;
-    private ImageButton plusButton, minusButton, saveButton;
-    private TextView numberTextView, playerNameTextView, issueTextView;
+    private ImageButton /*plusButton, minusButton,*/ saveButton;
+    private TextView /*numberTextView,*/ playerNameTextView, issueTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,20 +43,20 @@ public class ManagePlayersFingersController extends AppCompatActivity {
     }
 
     private void configure() {
-        this.playerNameTextView.setText(playerDataModel.getName());
+        this.playerNameTextView.setText(playerDataModel.getName().toUpperCase());
     }
 
     private void bindViews() {
-        this.plusButton = findViewById(R.id.manage_fingers_plus_button);
-        this.minusButton = findViewById(R.id.manage_fingers_minus_button);
-        this.numberTextView = findViewById(R.id.manage_fingers_number_textview);
+        //this.plusButton = findViewById(R.id.manage_fingers_plus_button);
+        //this.minusButton = findViewById(R.id.manage_fingers_minus_button);
+        //this.numberTextView = findViewById(R.id.manage_fingers_number_textview);
         this.playerNameTextView = findViewById(R.id.manage_fingers_player_name_textview);
         this.saveButton = findViewById(R.id.manage_fingers_save_button);
         this.issueTextView = findViewById(R.id.manage_fingers_issue_textview);
     }
 
     private void configureClicklisteners() {
-        plusButton.setOnClickListener(new View.OnClickListener() {
+       /* plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final int previousValue = Integer.parseInt(numberTextView.getText().toString());
@@ -75,19 +75,20 @@ public class ManagePlayersFingersController extends AppCompatActivity {
                     numberTextView.setText(nextValue);
                 }
             }
-        });
+        });*/
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final String issue = String.valueOf(issueTextView.getText());
-                final int fingers = Integer.parseInt(numberTextView.getText().toString());
+                //final int fingers = Integer.parseInt(numberTextView.getText().toString());
                 final IssueModel issueModel = new IssueModel(issue);
                 final String playerName = playerDataModel.getName();
 
                 if(issue.isBlank() || issue == null){
                     showToast(getBaseContext().getString(R.string.issue_empty));
                 }else{
-                    updatePlayerData(playerName, fingers, issueModel);
+                    //updatePlayerData(playerName, fingers, issueModel);
+                    updatePlayerData(playerName, 1, issueModel);
                     finish();
                 }
             }

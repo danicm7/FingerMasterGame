@@ -22,7 +22,7 @@ public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements 
         super(itemView);
         this.itemView = itemView;
         this.itemView.setOnClickListener(this::onClick);
-        this.textView = itemView.findViewById(R.id.text_view_view_holder);
+        this.textView = itemView.findViewById(R.id.name_view_holder_home_fragment);
         this.checkBoxes = new ImageView[] {itemView.findViewById(R.id.checkBox_state_0),
                 itemView.findViewById(R.id.checkBox_state_1)
                 ,itemView.findViewById(R.id.checkBox_state_2)

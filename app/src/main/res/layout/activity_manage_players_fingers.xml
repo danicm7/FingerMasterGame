@@ -17,23 +17,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="@dimen/size.10"
-        android:layout_marginStart="@dimen/size.10"
-        android:paddingTop="@dimen/size.10"
+
         />
 
     <TextView
+        style="@style/CustomEditTextStyle"
         android:id="@+id/manage_fingers_player_name_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textAlignment="center"
-        android:textColor="@color/app_main_color"
-        android:textSize="@dimen/textSize.50"
+        android:inputType="textCapCharacters"
+        android:editable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manage_fingers_player_name_title_textview"
-        android:paddingBottom="@dimen/size.40"/>
+        app:layout_constraintTop_toBottomOf="@+id/manage_fingers_player_name_title_textview" />
+<!--
+Linear layout deactivated until implement multi fingers issues
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,6 +40,7 @@
         android:id="@+id/manage_fingers_number_container"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
+        android:visibility="gone"
         >
         <ImageButton
             style="@style/CustomButton"
@@ -57,7 +56,7 @@
             android:src="@drawable/plus_asset" />
     </LinearLayout>
 
-
+-->
 
     <TextView
         style="@style/CustomtextViewTittle"
@@ -67,10 +66,7 @@
         android:text="@string/player_data_issue_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manage_fingers_number_container"
-        android:layout_marginEnd="@dimen/size.10"
-        android:layout_marginStart="@dimen/size.10"
-        android:paddingTop="@dimen/size.40"
+        app:layout_constraintTop_toBottomOf="@+id/manage_fingers_player_name_textview"
         />
 
     <EditText
@@ -84,18 +80,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manage_fingers_issue_title_textview"
-        android:layout_marginEnd="@dimen/size.10"
-        android:layout_marginStart="@dimen/size.10"
         />
 
     <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/manage_fingers_save_button"
+        style="@style/SaveButton"
         android:src="@drawable/lock_icon"
-        android:layout_marginEnd="@dimen/size.10"
-        android:layout_marginStart="@dimen/size.10"
-        android:layout_marginBottom="@dimen/size.10"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

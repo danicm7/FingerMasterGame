@@ -9,27 +9,51 @@
         <item name="android:textColor">@color/app_main_color</item>
         <item name="android:textSize">@dimen/textSize.20</item>
         <item name="android:textColorHint">@color/app_main_color</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:gravity">start</item>
         <item name="android:backgroundTintMode">screen</item>
+        <item name="android:layout_marginStart">@dimen/size.30</item>
+        <item name="android:layout_marginBottom">@dimen/size.10</item>
+        <item name="android:layout_marginTop">@dimen/size.10</item>
+        <item name="android:layout_marginEnd">@dimen/size.30</item>
+
     </style>
 
     <style name="CustomtextViewTittle">
         <item name="android:gravity">start</item>
         <item name="android:textColor">@color/app_secondary_color</item>
-        <item name="android:textSize">@dimen/textSize.28</item>
-        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/textSize.30</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:editable">false</item>
+        <item name="android:layout_marginTop">@dimen/size.10</item>
+        <item name="android:layout_marginBottom">@dimen/size.10</item>
+        <item name="android:layout_marginStart">@dimen/size.30</item>
+        <item name="android:layout_marginEnd">@dimen/size.30</item>
     </style>
 
     <style name="CustomButton">
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:layout_width">@dimen/size.70</item>
-        <item name="android:layout_height">@dimen/size.70</item>
+        <item name="android:layout_width">@dimen/size.50</item>
+        <item name="android:layout_height">@dimen/size.50</item>
+    </style>
+
+    <style name="SaveButton">
+        <item name="android:layout_width">@dimen/size.200</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/lock_icon</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginStart">@dimen/size.20</item>
+        <item name="android:layout_marginEnd">@dimen/size.20</item>
+        <item name="android:layout_marginBottom">@dimen/size.20</item>
+        <item name="android:layout_marginTop">@dimen/size.20</item>
+
     </style>
 
     <style name="FingerTextViewCounter">
         <item name="android:minHeight">@dimen/size.70</item>
         <item name="android:minWidth">@dimen/size.110</item>
-        <item name="android:textSize">@dimen/textSize.50</item>
+        <item name="android:textSize">@dimen/textSize.40</item>
         <item name="android:textColor">@color/app_main_color</item>
         <item name="android:textAlignment">center</item>
         <item name="android:clickable">false</item>
@@ -39,5 +63,16 @@
         <item name="android:inputType">phone</item>
     </style>
 
+    <style name="nameViewholder">
+        <item name="android:layout_width">@dimen/size.200</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginStart">@dimen/playerNameMargin</item>
+        <item name="android:textSize">@dimen/textSize.18</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/app_main_color</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center_horizontal|start|center_vertical</item>
+    </style>
 
 </resources>
