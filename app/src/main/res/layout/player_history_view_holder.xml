@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/fingersLinearLayoutVerticalMargins"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal"
+    android:paddingBottom="@dimen/size.5">
+    <TextView
+        style="@style/nameViewholder"
+        android:textSize="@dimen/textSize.24"
+        android:id="@+id/name_view_holder_player_history"/>
+
+</LinearLayout>
