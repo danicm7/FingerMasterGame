@@ -12,6 +12,13 @@
         android:theme="@style/Theme.FingerMasterGame"
         tools:targetApi="31">
         <activity
+            android:name=".ui.playerHistory.resume.PlayerHistoryResume"
+            android:exported="false">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".navigationDrawerMenu" />
+        </activity>
+        <activity
             android:name=".ui.newPlayer.NewPlayerActivityController"
             android:exported="false" />
         <activity

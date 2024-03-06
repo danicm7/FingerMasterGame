@@ -1,9 +1,11 @@
 package com.example.fingermastergame.ui.playerHistory;
 
 import android.content.Context;
-import android.icu.text.Edits;
 
 import androidx.lifecycle.ViewModel;
+
+import com.example.fingermastergame.navigationDrawerMenu;
+import com.example.fingermastergame.ui.playerData.IssueModel;
 import com.example.fingermastergame.ui.playerData.PlayerDataModel;
 import com.example.fingermastergame.ui.storage.ManageStorage;
 
@@ -23,5 +25,31 @@ public class PlayerHistoryViewModel extends ViewModel {
             names.add(it.next().getName());
         }
         return names;
+    }
+    public ArrayList<IssueModel> getIssuesByName(String name, Context c){
+        final ArrayList<PlayerDataModel> n = this.getAllPlayersData(c);
+        final Iterator<PlayerDataModel> it = n.iterator();
+
+        while (it.hasNext()){
+            final PlayerDataModel player = it.next();
+            if (player.getName().equals(name)){
+                return player.getIssue();
+            }
+        }
+        return null;
+    }
+
+    protected PlayerDataModel getPlayerByName(String name){
+        final Context c = new navigationDrawerMenu().getContext();
+        final ArrayList<PlayerDataModel> n = new ManageStorage(c).getAllPlayers();
+        final Iterator<PlayerDataModel> it = n.iterator();
+
+        while (it.hasNext()){
+            final PlayerDataModel player = it.next();
+            if (player.getName().equals(name)){
+                return player;
+            }
+        }
+        return null;
     }
 }
