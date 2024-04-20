@@ -22,7 +22,7 @@
             android:name=".ui.newPlayer.NewPlayerActivityController"
             android:exported="false" />
         <activity
-            android:name=".ui.manageFingers.ManagePlayersFingersController"
+            android:name=".ui.manageFingers.CreateIssueController"
             android:exported="false" />
         <activity
             android:name=".NavigationDrawerMenu"

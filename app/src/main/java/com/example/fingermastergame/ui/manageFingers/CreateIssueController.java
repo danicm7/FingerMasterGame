@@ -28,7 +28,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 
-public class ManagePlayersFingersController extends AppCompatActivity {
+public class CreateIssueController extends AppCompatActivity {
     private PlayerModel playerModel;
     private ImageButton /*plusButton, minusButton,*/ saveButton;
     private TextView /*numberTextView,*/ playerNameTextView, issueTextView;
@@ -37,7 +37,7 @@ public class ManagePlayersFingersController extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         playerModel = (PlayerModel) getIntent().getSerializableExtra(getString(R.string.player_data_model));
-        setContentView(R.layout.activity_manage_players_fingers);
+        setContentView(R.layout.activity_create_issue);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         bindViews();
         configure();
