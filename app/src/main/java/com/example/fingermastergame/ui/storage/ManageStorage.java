@@ -1,38 +1,20 @@
 package com.example.fingermastergame.ui.storage;
 
-import android.content.Context;
-
-import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.playerData.PlayerDataModel;
-import com.google.gson.Gson;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-
 public class ManageStorage {
-    final private Context context;
+   /* final private Context context;
     final private String playerDataFileName;
     final private Gson gson = new Gson();
     final private File file;
 
-    public ManageStorage(Context c){
+   public ManageStorage(Context c){
         this.context = c;
         playerDataFileName = context.getResources().getString(R.string.player_data_storage_path);
         file = new File(context.getFilesDir(), playerDataFileName);
     }
 
-    public void setPlayerData(PlayerDataModel playerDataModel){
-        PlayerDataModel[] list = getAllPlayersData();
-        ArrayList<PlayerDataModel> arrayList = arrayToArrayList(list);
+    public void setPlayerData(PlayerModel playerDataModel){
+        PlayerModel[] list = getAllPlayersData();
+        ArrayList<PlayerModel> arrayList = arrayToArrayList(list);
 
         for (int i = 0; i < arrayList.size(); i++) {
             if (arrayList.get(i).getName().equals(playerDataModel.getName())) {
@@ -53,9 +35,9 @@ public class ManageStorage {
             throw new RuntimeException(e);
         }
     }
-    public void saveNewPlayerData(PlayerDataModel playerDataModel){
-        PlayerDataModel[] list = getAllPlayersData();
-        ArrayList<PlayerDataModel> arrayList = arrayToArrayList(list);
+    public void saveNewPlayerData(PlayerModel playerDataModel){
+        PlayerModel[] list = getAllPlayersData();
+        ArrayList<PlayerModel> arrayList = arrayToArrayList(list);
         arrayList.add(playerDataModel);
         list = arrayListToArray(arrayList);
 
@@ -71,9 +53,9 @@ public class ManageStorage {
         }
     }
 
-    private PlayerDataModel[] getAllPlayersData() {
+    private PlayerModel[] getAllPlayersData() {
         if (!file.exists()){
-            return new PlayerDataModel[0];
+            return new PlayerModel[0];
         }
         try {
             FileInputStream fis = context.openFileInput(playerDataFileName);
@@ -86,7 +68,7 @@ public class ManageStorage {
                 line = reader.readLine();
             }
             final String contents = stringBuilder.toString();
-            final PlayerDataModel[] data = gson.fromJson(contents, PlayerDataModel[].class);
+            final PlayerModel[] data = gson.fromJson(contents, PlayerModel[].class);
 
             fis.close();
             inputStreamReader.close();
@@ -99,16 +81,16 @@ public class ManageStorage {
 
     }
 
-    public ArrayList<PlayerDataModel> getAllPlayers(){
+    public ArrayList<PlayerModel> getAllPlayers(){
         return arrayToArrayList(getAllPlayersData());
     }
 
-    private PlayerDataModel[] arrayListToArray(ArrayList<PlayerDataModel> playerDataModelArrayList){
+    private PlayerModel[] arrayListToArray(ArrayList<PlayerModel> playerDataModelArrayList){
         final int size= playerDataModelArrayList.size();
-        return playerDataModelArrayList.toArray(new PlayerDataModel[size]);
+        return playerDataModelArrayList.toArray(new PlayerModel[size]);
     }
 
-    private ArrayList<PlayerDataModel> arrayToArrayList (PlayerDataModel[] array){
-        return new ArrayList<PlayerDataModel>(Arrays.asList(array));
-    }
+    private ArrayList<PlayerModel> arrayToArrayList (PlayerModel[] array){
+        return new ArrayList<PlayerModel>(Arrays.asList(array));
+    }*/
 }
