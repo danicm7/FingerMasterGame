@@ -1,12 +1,27 @@
 package com.example.fingermastergame.ui.utils;
 
-import android.content.Context;
+import com.example.fingermastergame.ui.playerData.PlayerModel;
 
-import com.example.fingermastergame.navigationDrawerMenu;
+import java.util.ArrayList;
+import java.util.Arrays;
 
- public class ManageFingersUtils {
+public class ManageFingersUtils {
+    private static ManageFingersUtils instance;
 
-    public static Context getContext(){
-        return new navigationDrawerMenu().getContext();
+    private ManageFingersUtils() {
+    }
+    public static ManageFingersUtils getInstance() {
+        if (instance == null) {
+            instance = new ManageFingersUtils();
+        }
+        return instance;
+    }
+    public static PlayerModel[] arrayListToArray(ArrayList<PlayerModel> playerModelArrayList){
+        final int size= playerModelArrayList.size();
+        return playerModelArrayList.toArray(new PlayerModel[size]);
+    }
+
+    public static ArrayList<PlayerModel> arrayToArrayList (PlayerModel[] array){
+        return new ArrayList<PlayerModel>(Arrays.asList(array));
     }
 }

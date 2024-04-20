@@ -3,17 +3,17 @@ package com.example.fingermastergame.ui.playerData;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PlayerDataModel implements Serializable {
+public class PlayerModel implements Serializable {
     private int fingers = -1;
     private String name = "";
     private ArrayList<IssueModel> issueModel = new ArrayList<IssueModel>();
 
-    public PlayerDataModel(String name, int fingers) {
+    public PlayerModel(String name, int fingers) {
         this.name = name;
         this.fingers = fingers;
     }
 
-    public PlayerDataModel() {
+    public PlayerModel() {
     }
 
     public int getFingers() {

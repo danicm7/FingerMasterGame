@@ -1,6 +1,5 @@
 package com.example.fingermastergame;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,12 +14,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.fingermastergame.databinding.ActivityNavigationDrawerMenuBinding;
 
-public class navigationDrawerMenu extends AppCompatActivity {
+public class NavigationDrawerMenu extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavigationDrawerMenuBinding binding;
-    private static Context context;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +45,6 @@ public class navigationDrawerMenu extends AppCompatActivity {
                 openAddPlayerScreen();
             }
         });
-        context = getApplicationContext();
-
     }
 
     private void openAddPlayerScreen() {
@@ -73,9 +68,5 @@ public class navigationDrawerMenu extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation_drawer_menu);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    public Context getContext() {
-        return this.context;
     }
 }

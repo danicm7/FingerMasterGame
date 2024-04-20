@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.ui.manageFingers.ManagePlayersFingersController;
-import com.example.fingermastergame.ui.playerData.PlayerDataModel;
+import com.example.fingermastergame.ui.playerData.PlayerModel;
 
 public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private View itemView;
     private TextView textView;
     private ImageView[] checkBoxes;
-    private PlayerDataModel playerDataModel;
+    private PlayerModel playerModel;
 
     public HomeFragmentViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -39,12 +39,12 @@ public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements 
         return checkBoxes;
     }
 
-    public void setPlayerDataModel(PlayerDataModel playerDataModel) {
-        this.playerDataModel = playerDataModel;
+    public void setPlayerDataModel(PlayerModel playerModel) {
+        this.playerModel = playerModel;
     }
 
-    public PlayerDataModel getPlayerDataModel() {
-        return playerDataModel;
+    public PlayerModel getPlayerDataModel() {
+        return playerModel;
     }
 
     @Override

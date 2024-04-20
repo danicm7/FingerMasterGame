@@ -22,7 +22,7 @@
     <string name="issue_empty">Issue description is blank</string>
     <string name="new_player_name_tittle">New player name:</string>
     <string name="new_player_name_hint">Player name</string>
-    <string name="player_data_storage_path">playersData.json</string>
+    <string name="player_data_file_name">playersData.json</string>
     <string name="error_empty_name">Name of player is empty!</string>
     <string name="error_existing_name">Name already exist</string>
 

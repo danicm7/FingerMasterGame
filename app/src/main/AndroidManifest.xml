@@ -12,11 +12,11 @@
         android:theme="@style/Theme.FingerMasterGame"
         tools:targetApi="31">
         <activity
-            android:name=".ui.playerHistory.resume.PlayerHistoryResume"
+            android:name=".ui.playerHistory.PlayerIssuesController"
             android:exported="false">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".navigationDrawerMenu" />
+            android:value=".NavigationDrawerMenu" />
         </activity>
         <activity
             android:name=".ui.newPlayer.NewPlayerActivityController"
@@ -25,7 +25,7 @@
             android:name=".ui.manageFingers.ManagePlayersFingersController"
             android:exported="false" />
         <activity
-            android:name=".navigationDrawerMenu"
+            android:name=".NavigationDrawerMenu"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.FingerMasterGame.NoActionBar">

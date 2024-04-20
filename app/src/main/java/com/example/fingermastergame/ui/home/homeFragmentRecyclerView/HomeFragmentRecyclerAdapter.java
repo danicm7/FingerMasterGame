@@ -7,14 +7,15 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.playerData.PlayerDataModel;
+import com.example.fingermastergame.ui.playerData.PlayerModel;
+
 import java.util.ArrayList;
 
 public class HomeFragmentRecyclerAdapter extends RecyclerView.Adapter {
 
-    private ArrayList<PlayerDataModel> players;
+    private ArrayList<PlayerModel> players;
 
-    public HomeFragmentRecyclerAdapter(ArrayList<PlayerDataModel> players) {
+    public HomeFragmentRecyclerAdapter(ArrayList<PlayerModel> players) {
         this.players = players;
     }
 
@@ -27,11 +28,11 @@ public class HomeFragmentRecyclerAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        final PlayerDataModel playerDataModel = players.get(position);
+        final PlayerModel playerModel = players.get(position);
         final HomeFragmentViewHolder homeFragmentViewHolder = ((HomeFragmentViewHolder) holder);
-        homeFragmentViewHolder.getTextView().setText(playerDataModel.getName());
-        homeFragmentViewHolder.setPlayerDataModel(playerDataModel);
-        paintChecksBoxes(homeFragmentViewHolder, playerDataModel);
+        homeFragmentViewHolder.getTextView().setText(playerModel.getName());
+        homeFragmentViewHolder.setPlayerDataModel(playerModel);
+        paintChecksBoxes(homeFragmentViewHolder, playerModel);
     }
 
 
@@ -45,8 +46,8 @@ public class HomeFragmentRecyclerAdapter extends RecyclerView.Adapter {
         }
     }
 
-    private void paintChecksBoxes(HomeFragmentViewHolder homeFragmentViewHolder, PlayerDataModel playerDataModel) {
-        int fingers = playerDataModel.getFingers();
+    private void paintChecksBoxes(HomeFragmentViewHolder homeFragmentViewHolder, PlayerModel playerModel) {
+        int fingers = playerModel.getFingers();
         final int checkBoxesLenght = homeFragmentViewHolder.getCheckBoxes().length;
         final ImageView[] checkBoxes = homeFragmentViewHolder.getCheckBoxes();
         for (int cont=0; cont < checkBoxesLenght;cont++){
