@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.manageFingers.CreateIssueController;
+import com.example.fingermastergame.ui.createIssue.CreateIssueController;
 import com.example.fingermastergame.ui.playerData.PlayerModel;
 
 public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
