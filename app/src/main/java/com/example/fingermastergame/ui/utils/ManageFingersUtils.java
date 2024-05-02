@@ -24,4 +24,7 @@ public class ManageFingersUtils {
     public static ArrayList<PlayerModel> arrayToArrayList (PlayerModel[] array){
         return new ArrayList<PlayerModel>(Arrays.asList(array));
     }
+    public static ArrayList<String> arrayToArrayList (String[] array){
+        return new ArrayList<String>(Arrays.asList(array));
+    }
 }

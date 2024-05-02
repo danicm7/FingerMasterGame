@@ -3,17 +3,14 @@ package com.example.fingermastergame.ui.playerHistory;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
-
+import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
-
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.ui.playerData.PlayerModel;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
 import com.google.gson.Gson;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,13 +21,14 @@ import java.util.ArrayList;
 
 public class PlayerIssuesController extends AppCompatActivity {
 
-    private TextView textView;
     private String name;
     private PlayerHistoryViewModel playerHistoryViewModel;
+    private RecyclerView recyclerView;
+    private PlayerIssuesRecyclerAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player_history_resume);
+        setContentView(R.layout.activity_player_issues_resume);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
@@ -39,13 +37,13 @@ public class PlayerIssuesController extends AppCompatActivity {
     }
 
     private void bindViews() {
-        textView = findViewById(R.id.player_history_list_view);
+        this.recyclerView = findViewById(R.id.player_issues_recycler_view);
     }
 
     private void configure() {
         this.playerHistoryViewModel = new PlayerHistoryViewModel(loadPlayers());
-        final String issues = playerHistoryViewModel.getIssuesByName(name);
-        textView.setText(issues);
+        this.adapter = new PlayerIssuesRecyclerAdapter(playerHistoryViewModel,name);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override

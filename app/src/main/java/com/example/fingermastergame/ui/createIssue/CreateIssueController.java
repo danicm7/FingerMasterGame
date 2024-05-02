@@ -1,4 +1,4 @@
-package com.example.fingermastergame.ui.manageFingers;
+package com.example.fingermastergame.ui.createIssue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
