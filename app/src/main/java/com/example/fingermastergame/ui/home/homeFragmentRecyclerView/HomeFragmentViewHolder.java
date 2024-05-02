@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.manageFingers.ManagePlayersFingersController;
+import com.example.fingermastergame.ui.manageFingers.CreateIssueController;
 import com.example.fingermastergame.ui.playerData.PlayerModel;
 
 public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -49,7 +49,7 @@ public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements 
 
     @Override
     public void onClick(View view) {
-        Intent i = new Intent(itemView.getContext(), ManagePlayersFingersController.class);
+        Intent i = new Intent(itemView.getContext(), CreateIssueController.class);
         i.putExtra(itemView.getContext().getString(R.string.player_data_model), getPlayerDataModel());
         itemView.getContext().startActivity(i);
     }

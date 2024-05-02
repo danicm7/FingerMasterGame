@@ -34,10 +34,13 @@ public class PlayerHistoryViewModel extends ViewModel {
             final PlayerModel player = it.next();
             if (player.getName().equals(name)){
                 for(int i = 0; i < player.getIssue().size(); i++){
-                    issues = issues + "\n- " + player.getIssue().get(i).getDescription();
+                    issues = issues + player.getIssue().get(i).getDescription() + "\n";
                 }
             }
         }
         return issues;
+    }
+    protected int getSize(){
+        return playerModels.size();
     }
 }

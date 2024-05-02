@@ -7,14 +7,13 @@
     android:background="@color/custom_grey"
     tools:context=".ui.playerHistory.PlayerIssuesController">
 
-    <TextView
-        android:id="@+id/player_history_list_view"
-        style="@style/nameViewholder"
-        android:textAlignment="viewStart"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/player_issues_recycler_view"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/custom_grey"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" /> />
 </androidx.constraintlayout.widget.ConstraintLayout>
