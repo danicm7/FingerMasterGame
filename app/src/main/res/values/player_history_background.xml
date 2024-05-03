@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="player_history_background">#3DDC84</color>
+    <color name="players_list_background">#3DDC84</color>
 </resources>

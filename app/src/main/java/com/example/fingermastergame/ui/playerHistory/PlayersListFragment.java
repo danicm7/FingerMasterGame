@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.databinding.FragmentPlayerHistoryBinding;
+import com.example.fingermastergame.databinding.FragmentPlayersListBinding;
 import com.example.fingermastergame.ui.playerData.PlayerModel;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
 import com.google.gson.Gson;
@@ -21,15 +21,15 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-public class PlayerHistoryFragment extends Fragment {
-private FragmentPlayerHistoryBinding binding;
-private PlayerHistoryViewModel playerHistoryViewModel;
+public class PlayersListFragment extends Fragment {
+private FragmentPlayersListBinding binding;
+private PlayersListViewModel playersListViewModel;
 private ArrayList<PlayerModel> names = new ArrayList<PlayerModel>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        playerHistoryViewModel = new ViewModelProvider(this).get(PlayerHistoryViewModel.class);
-        binding = FragmentPlayerHistoryBinding.inflate(inflater, container, false);
+        playersListViewModel = new ViewModelProvider(this).get(PlayersListViewModel.class);
+        binding = FragmentPlayersListBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         configure();
         return root;
@@ -41,9 +41,9 @@ private ArrayList<PlayerModel> names = new ArrayList<PlayerModel>();
         this.binding = null;
     }
     private void configure(){
-        this.playerHistoryViewModel = new PlayerHistoryViewModel(loadPlayers());
-        this.names = playerHistoryViewModel.getPlayersNames();
-        this.binding.playerHistoryRecyclerView.setAdapter(new PlayerHistoryRecyclerAdapter(names));
+        this.playersListViewModel = new PlayersListViewModel(loadPlayers());
+        this.names = playersListViewModel.getPlayersNames();
+        this.binding.playersListRecyclerView.setAdapter(new PlayersListRecyclerAdapter(names));
 
     }
 

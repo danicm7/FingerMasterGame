@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.fingermastergame.ui.playerHistory.PlayerHistoryFragment"
-        android:label="@string/menu_player_history"
-        tools:layout="@layout/fragment_player_history" />
+        android:name="com.example.fingermastergame.ui.playerHistory.PlayersListFragment"
+        android:label="@string/menu_players_list"
+        tools:layout="@layout/fragment_players_list" />
 
     <fragment
         android:id="@+id/nav_slideshow"

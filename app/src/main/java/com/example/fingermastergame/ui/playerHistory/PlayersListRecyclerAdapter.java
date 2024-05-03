@@ -12,10 +12,10 @@ import com.example.fingermastergame.ui.playerData.PlayerModel;
 
 import java.util.ArrayList;
 
-public class PlayerHistoryRecyclerAdapter extends RecyclerView.Adapter<PlayerHistoryRecyclerAdapter.PlayerHistoryViewHolder>{
+public class PlayersListRecyclerAdapter extends RecyclerView.Adapter<PlayersListRecyclerAdapter.PlayerHistoryViewHolder>{
     private final ArrayList<PlayerModel> players;
 
-    public PlayerHistoryRecyclerAdapter(ArrayList<PlayerModel> players) {
+    public PlayersListRecyclerAdapter(ArrayList<PlayerModel> players) {
         this.players = players;
     }
 
@@ -42,7 +42,7 @@ public class PlayerHistoryRecyclerAdapter extends RecyclerView.Adapter<PlayerHis
         private final TextView textView;
         public PlayerHistoryViewHolder(View view) {
             super(view);
-            textView = (TextView) view.findViewById(R.id.name_view_holder_player_history);
+            textView = (TextView) view.findViewById(R.id.name_view_holder_players_list);
             configure();
         }
 

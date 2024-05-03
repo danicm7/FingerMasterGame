@@ -7,12 +7,12 @@ import com.example.fingermastergame.ui.playerData.PlayerModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class PlayerHistoryViewModel extends ViewModel {
+public class PlayersListViewModel extends ViewModel {
     ArrayList<PlayerModel> playerModels;
-    protected PlayerHistoryViewModel(ArrayList<PlayerModel> playerModels) {
+    protected PlayersListViewModel(ArrayList<PlayerModel> playerModels) {
         this.playerModels = playerModels;
     }
-    private PlayerHistoryViewModel(){
+    private PlayersListViewModel(){
     }
     protected ArrayList<PlayerModel> getPlayersNames() {
         return playerModels;

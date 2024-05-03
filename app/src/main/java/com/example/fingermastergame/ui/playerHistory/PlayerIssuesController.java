@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class PlayerIssuesController extends AppCompatActivity {
 
     private String name;
-    private PlayerHistoryViewModel playerHistoryViewModel;
+    private PlayersListViewModel playersListViewModel;
     private RecyclerView recyclerView;
     private PlayerIssuesRecyclerAdapter adapter;
     @Override
@@ -41,8 +41,8 @@ public class PlayerIssuesController extends AppCompatActivity {
     }
 
     private void configure() {
-        this.playerHistoryViewModel = new PlayerHistoryViewModel(loadPlayers());
-        this.adapter = new PlayerIssuesRecyclerAdapter(playerHistoryViewModel,name);
+        this.playersListViewModel = new PlayersListViewModel(loadPlayers());
+        this.adapter = new PlayerIssuesRecyclerAdapter(playersListViewModel,name);
         recyclerView.setAdapter(adapter);
     }
 
