@@ -10,7 +10,7 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/player_history_foreground"
+            android:icon="@drawable/players_list_foreground"
             android:title="@string/menu_players_list" />
         <item
             android:id="@+id/nav_slideshow"
