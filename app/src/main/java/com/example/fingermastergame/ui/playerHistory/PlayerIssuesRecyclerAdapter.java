@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssuesRecyclerAdapter.ViewHolder> {
 
@@ -50,7 +51,8 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
     }
     private void configure(){
         final String issues  = this.playersListViewModel.getIssuesByName(playerName);
-        final String[] issuesArray = issues.split("\n");
+        final String[] issuesArray =
+                !Objects.equals(issues, "") ? issues.split("\n") : new String[0];
         this.issues = ManageFingersUtils.arrayToArrayList(issuesArray);
     }
 }
