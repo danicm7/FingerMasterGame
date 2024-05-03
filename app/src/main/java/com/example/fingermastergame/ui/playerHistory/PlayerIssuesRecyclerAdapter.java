@@ -6,13 +6,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.fingermastergame.R;
+import com.example.fingermastergame.ui.playerData.PlayersListModel;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssuesRecyclerAdapter.ViewHolder> {
 
-    private PlayersListViewModel playersListViewModel;
+    private PlayersListModel playersListModel;
     private ArrayList<String> issues;
     private String playerName;
 
@@ -28,8 +29,8 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
             return textView;
         }
     }
-    public PlayerIssuesRecyclerAdapter(PlayersListViewModel playersListViewModel, String playerName) {
-        this.playersListViewModel = playersListViewModel;
+    public PlayerIssuesRecyclerAdapter(PlayersListModel playersListModel, String playerName) {
+        this.playersListModel = playersListModel;
         this.playerName = playerName;
         configure();
     }
@@ -50,7 +51,7 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
         return issues.size();
     }
     private void configure(){
-        final String issues  = this.playersListViewModel.getIssuesByName(playerName);
+        final String issues  = this.playersListModel.getIssuesByName(playerName);
         final String[] issuesArray =
                 !Objects.equals(issues, "") ? issues.split("\n") : new String[0];
         this.issues = ManageFingersUtils.arrayToArrayList(issuesArray);
