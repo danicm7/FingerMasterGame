@@ -21,4 +21,7 @@
     <!-- Fingers Linear Layout -->
     <dimen name="fingersLinearLayoutVerticalMargins">10dp</dimen>
 
+    <!-- Players Issue Activity Custom ViewHolder Sizes-->
+    <dimen name="player_issues_view_holder_custom_margins">20dp</dimen>
+
 </resources>

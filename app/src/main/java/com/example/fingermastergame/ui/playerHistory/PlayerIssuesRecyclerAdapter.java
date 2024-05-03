@@ -3,6 +3,7 @@ package com.example.fingermastergame.ui.playerHistory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.fingermastergame.R;
@@ -44,7 +45,11 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
     }
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        viewHolder.getTextView().setText(issues.get(position));
+        viewHolder.getTextView().setText("- " + issues.get(position));
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        int margins = (int) viewHolder.getTextView().getContext().getResources().getDimension(R.dimen.player_issues_view_holder_custom_margins);
+        params.setMargins(margins,0, margins,0);
+        viewHolder.getTextView().setLayoutParams(params);
     }
     @Override
     public int getItemCount() {
