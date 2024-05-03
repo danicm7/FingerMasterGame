@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.playerHistory.PlayerHistoryFragment"
+    tools:context=".ui.playerHistory.PlayersListFragment"
     android:background="@color/custom_grey">
 
     <androidx.recyclerview.widget.RecyclerView
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/player_history_recycler_view"
+        android:id="@+id/players_list_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

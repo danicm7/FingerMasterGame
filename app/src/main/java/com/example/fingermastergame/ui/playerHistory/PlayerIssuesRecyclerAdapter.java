@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssuesRecyclerAdapter.ViewHolder> {
 
-    private PlayerHistoryViewModel playerHistoryViewModel;
+    private PlayersListViewModel playersListViewModel;
     private ArrayList<String> issues;
     private String playerName;
 
@@ -20,15 +20,15 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
 
         public ViewHolder(View view) {
             super(view);
-            textView = (TextView) view.findViewById(R.id.name_view_holder_player_history);
+            textView = (TextView) view.findViewById(R.id.name_view_holder_players_list);
         }
 
         public TextView getTextView() {
             return textView;
         }
     }
-    public PlayerIssuesRecyclerAdapter(PlayerHistoryViewModel playerHistoryViewModel, String playerName) {
-        this.playerHistoryViewModel = playerHistoryViewModel;
+    public PlayerIssuesRecyclerAdapter(PlayersListViewModel playersListViewModel, String playerName) {
+        this.playersListViewModel = playersListViewModel;
         this.playerName = playerName;
         configure();
     }
@@ -49,7 +49,7 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
         return issues.size();
     }
     private void configure(){
-        final String issues  = this.playerHistoryViewModel.getIssuesByName(playerName);
+        final String issues  = this.playersListViewModel.getIssuesByName(playerName);
         final String[] issuesArray = issues.split("\n");
         this.issues = ManageFingersUtils.arrayToArrayList(issuesArray);
     }
