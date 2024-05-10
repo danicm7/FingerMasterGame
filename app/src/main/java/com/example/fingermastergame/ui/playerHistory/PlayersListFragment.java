@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.databinding.FragmentPlayersListBinding;
 import com.example.fingermastergame.ui.playerData.PlayerModel;

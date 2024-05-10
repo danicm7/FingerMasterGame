@@ -23,7 +23,7 @@ public class PlayersListRecyclerAdapter extends RecyclerView.Adapter<PlayersList
     @Override
     public PlayerHistoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.player_history_view_holder, parent, false);
+                .inflate(R.layout.custom_general_view_holder, parent, false);
         return new PlayerHistoryViewHolder(view);
     }
 

@@ -39,7 +39,7 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.player_history_view_holder, viewGroup, false);
+                .inflate(R.layout.custom_general_view_holder, viewGroup, false);
 
         return new ViewHolder(view);
     }
