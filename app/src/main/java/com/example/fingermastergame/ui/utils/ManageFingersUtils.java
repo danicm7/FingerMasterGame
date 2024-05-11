@@ -1,6 +1,6 @@
 package com.example.fingermastergame.ui.utils;
 
-import com.example.fingermastergame.ui.playerData.PlayerModel;
+import com.example.fingermastergame.ui.playerModels.PlayerModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;

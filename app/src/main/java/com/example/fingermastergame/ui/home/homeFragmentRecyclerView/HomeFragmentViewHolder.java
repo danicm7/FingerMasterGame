@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.ui.createIssue.CreateIssueController;
-import com.example.fingermastergame.ui.playerData.PlayerModel;
+import com.example.fingermastergame.ui.playerModels.PlayerModel;
 
 public  class HomeFragmentViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private View itemView;

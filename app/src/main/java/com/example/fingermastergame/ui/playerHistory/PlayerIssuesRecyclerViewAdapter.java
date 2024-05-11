@@ -7,12 +7,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.playerData.PlayersListModel;
+import com.example.fingermastergame.ui.playerModels.PlayersListModel;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssuesRecyclerAdapter.ViewHolder> {
+public class PlayerIssuesRecyclerViewAdapter extends RecyclerView.Adapter<PlayerIssuesRecyclerViewAdapter.ViewHolder> {
 
     private PlayersListModel playersListModel;
     private ArrayList<String> issues;
@@ -23,14 +23,14 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
 
         public ViewHolder(View view) {
             super(view);
-            textView = (TextView) view.findViewById(R.id.name_view_holder_players_list);
+            textView = (TextView) view.findViewById(R.id.custom_general_view_holder_player_name);
         }
 
         public TextView getTextView() {
             return textView;
         }
     }
-    public PlayerIssuesRecyclerAdapter(PlayersListModel playersListModel, String playerName) {
+    public PlayerIssuesRecyclerViewAdapter(PlayersListModel playersListModel, String playerName) {
         this.playersListModel = playersListModel;
         this.playerName = playerName;
         configure();

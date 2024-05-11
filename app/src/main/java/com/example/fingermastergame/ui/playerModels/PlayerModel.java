@@ -1,4 +1,4 @@
-package com.example.fingermastergame.ui.playerData;
+package com.example.fingermastergame.ui.playerModels;
 
 import java.io.Serializable;
 import java.util.ArrayList;

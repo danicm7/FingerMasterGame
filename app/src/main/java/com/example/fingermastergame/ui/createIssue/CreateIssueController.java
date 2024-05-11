@@ -11,13 +11,11 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.playerData.IssueModel;
-import com.example.fingermastergame.ui.playerData.PlayerModel;
+import com.example.fingermastergame.ui.playerModels.IssueModel;
+import com.example.fingermastergame.ui.playerModels.PlayerModel;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
 import com.google.gson.Gson;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;

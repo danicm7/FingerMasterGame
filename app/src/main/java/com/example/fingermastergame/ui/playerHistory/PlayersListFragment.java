@@ -6,12 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.databinding.FragmentPlayersListBinding;
-import com.example.fingermastergame.ui.playerData.PlayerModel;
-import com.example.fingermastergame.ui.playerData.PlayersListModel;
+import com.example.fingermastergame.ui.playerModels.PlayerModel;
+import com.example.fingermastergame.ui.playerModels.PlayersListModel;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
+import com.example.fingermastergame.ui.utils.PlayersListRecyclerViewGeneralAdapter;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,11 +25,9 @@ import java.util.ArrayList;
 public class PlayersListFragment extends Fragment {
 private FragmentPlayersListBinding binding;
 private PlayersListModel playersListModel;
-private ArrayList<PlayerModel> names = new ArrayList<PlayerModel>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        playersListModel = new ViewModelProvider(this).get(PlayersListModel.class);
         binding = FragmentPlayersListBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         configure();
@@ -42,8 +41,7 @@ private ArrayList<PlayerModel> names = new ArrayList<PlayerModel>();
     }
     private void configure(){
         this.playersListModel = new PlayersListModel(loadPlayers());
-        this.names = playersListModel.getPlayersNames();
-        this.binding.playersListRecyclerView.setAdapter(new PlayersListRecyclerAdapter(names));
+        this.binding.playersListRecyclerView.setAdapter(new PlayersListRecyclerViewGeneralAdapter(playersListModel));
 
     }
 

@@ -8,8 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.playerData.PlayerModel;
-import com.example.fingermastergame.ui.playerData.PlayersListModel;
+import com.example.fingermastergame.ui.playerModels.PlayerModel;
+import com.example.fingermastergame.ui.playerModels.PlayersListModel;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
@@ -20,12 +20,12 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-public class PlayerIssuesController extends AppCompatActivity {
+public class PlayerIssuesActivityController extends AppCompatActivity {
 
     private String name;
     private PlayersListModel playersListModel;
     private RecyclerView recyclerView;
-    private PlayerIssuesRecyclerAdapter adapter;
+    private PlayerIssuesRecyclerViewAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,7 @@ public class PlayerIssuesController extends AppCompatActivity {
 
     private void configure() {
         this.playersListModel = new PlayersListModel(loadPlayers());
-        this.adapter = new PlayerIssuesRecyclerAdapter(playersListModel,name);
+        this.adapter = new PlayerIssuesRecyclerViewAdapter(playersListModel,name);
         recyclerView.setAdapter(adapter);
     }
 

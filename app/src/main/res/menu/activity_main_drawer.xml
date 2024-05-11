@@ -13,8 +13,12 @@
             android:icon="@drawable/players_list_foreground"
             android:title="@string/menu_players_list" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_access_history"
             android:icon="@drawable/acces_history_foreground"
             android:title="@string/menu_acces_history" />
+        <item
+            android:id="@+id/nav_delete_player"
+            android:icon="@android:drawable/ic_menu_delete"
+            android:title="@string/menu_delete_player" />
     </group>
 </menu>

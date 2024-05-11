@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.playerData.PlayerModel;
+import com.example.fingermastergame.ui.playerModels.PlayerModel;
 
 import java.util.ArrayList;
 

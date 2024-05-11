@@ -1,4 +1,4 @@
-package com.example.fingermastergame.ui.playerData;
+package com.example.fingermastergame.ui.playerModels;
 
 import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
