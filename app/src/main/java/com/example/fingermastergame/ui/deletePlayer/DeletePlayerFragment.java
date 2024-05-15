@@ -6,11 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.databinding.FragmentDeletePlayerBinding;
 import com.example.fingermastergame.ui.playerModels.PlayerModel;
-import com.example.fingermastergame.ui.utils.PlayersListRecyclerViewGeneralAdapter;
 import com.example.fingermastergame.ui.playerModels.PlayersListModel;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
 import com.google.gson.Gson;
@@ -24,7 +22,7 @@ import java.util.ArrayList;
 
 public class DeletePlayerFragment extends Fragment {
     private FragmentDeletePlayerBinding binding;
-    private static PlayersListRecyclerViewGeneralAdapter adapter;
+    private static DeletePlayerRecyclerViewAdapter adapter;
     private static PlayersListModel playersListModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -38,7 +36,7 @@ public class DeletePlayerFragment extends Fragment {
 
     private void configure() {
         playersListModel = new PlayersListModel(loadPlayers());
-        adapter = new PlayersListRecyclerViewGeneralAdapter(playersListModel);
+        adapter = new DeletePlayerRecyclerViewAdapter(playersListModel);
         this.binding.deletePlayerRecyclerView.setAdapter(adapter);
     }
 

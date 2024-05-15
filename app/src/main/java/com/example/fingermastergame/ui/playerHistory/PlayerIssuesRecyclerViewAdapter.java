@@ -4,52 +4,49 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.ui.playerModels.PlayersListModel;
 import com.example.fingermastergame.ui.utils.ManageFingersUtils;
+import com.example.fingermastergame.ui.utils.PlayersListRecyclerViewGeneralAdapter;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class PlayerIssuesRecyclerViewAdapter extends RecyclerView.Adapter<PlayerIssuesRecyclerViewAdapter.ViewHolder> {
+public class PlayerIssuesRecyclerViewAdapter extends PlayersListRecyclerViewGeneralAdapter {
 
     private PlayersListModel playersListModel;
     private ArrayList<String> issues;
     private String playerName;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView;
+    public class PlayerIssuesViewHolder extends PlayerListGeneralViewHolder {
 
-        public ViewHolder(View view) {
+        public PlayerIssuesViewHolder(View view) {
             super(view);
-            textView = (TextView) view.findViewById(R.id.custom_general_view_holder_player_name);
         }
 
-        public TextView getTextView() {
-            return textView;
-        }
     }
     public PlayerIssuesRecyclerViewAdapter(PlayersListModel playersListModel, String playerName) {
+        super(playersListModel);
         this.playersListModel = playersListModel;
         this.playerName = playerName;
         configure();
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public PlayerIssuesViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.custom_general_view_holder, viewGroup, false);
 
-        return new ViewHolder(view);
+        return new PlayerIssuesViewHolder(view);
     }
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        viewHolder.getTextView().setText("- " + issues.get(position));
+    public void onBindViewHolder(PlayerListGeneralViewHolder viewHolder, final int position) {
+        viewHolder.getNameTextView().setText("- " + issues.get(position));
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        int margins = (int) viewHolder.getTextView().getContext().getResources().getDimension(R.dimen.player_issues_view_holder_custom_margins);
+        int margins = (int) viewHolder.getNameTextView().getContext().getResources().getDimension(R.dimen.player_issues_view_holder_custom_margins);
         params.setMargins(margins,0, margins,0);
-        viewHolder.getTextView().setLayoutParams(params);
+        viewHolder.getNameTextView().setLayoutParams(params);
     }
     @Override
     public int getItemCount() {

@@ -6,10 +6,19 @@
     android:orientation="horizontal"
     android:gravity="center_horizontal"
     android:paddingBottom="@dimen/size.5"
-    android:id="@+id/custom_general_view_holder">
+    android:id="@+id/custom_delete_player_view_holder">
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:checked="false"
+        android:text="CheckBox" />
+
     <TextView
         style="@style/nameViewholder"
         android:textSize="@dimen/textSize.24"
-        android:id="@+id/custom_general_view_holder_player_name"/>
+        android:id="@+id/custom_delete_player_view_holder_player_name"/>
 
 </LinearLayout>
