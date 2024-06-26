@@ -10,6 +10,7 @@
     <dimen name="size.50">50dp</dimen>
     <dimen name="size.60">60dp</dimen>
     <dimen name="size.70">70dp</dimen>
+    <dimen name="size.80">80dp</dimen>
     <dimen name="size.90">90dp</dimen>
     <dimen name="size.100">100dp</dimen>
     <dimen name="size.110">110dp</dimen>

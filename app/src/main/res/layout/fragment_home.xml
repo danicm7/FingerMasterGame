@@ -9,23 +9,23 @@
     tools:context=".ui.home.HomeFragment"
     android:background="@color/custom_grey">
 
-<ImageView
-    app:layout_constraintTop_toTopOf="@+id/home_fragment_container"
-    android:layout_width="@dimen/home_fragment_imageView_size"
-    android:layout_height="@dimen/home_fragment_imageView_size"
-    android:layout_marginTop="@dimen/size.10"
-    android:layout_marginBottom="@dimen/size.10"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    android:id="@+id/fragment_home_top_icon_imageview"
-    android:src="@drawable/hand_emoji_main_color_app"
-    />
-<androidx.recyclerview.widget.RecyclerView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/fragment_home_recyclerview"
-    app:layout_constraintTop_toBottomOf="@id/fragment_home_top_icon_imageview"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    />
+    <ImageView
+        app:layout_constraintTop_toTopOf="@+id/home_fragment_container"
+        android:layout_width="@dimen/home_fragment_imageView_size"
+        android:layout_height="@dimen/home_fragment_imageView_size"
+        android:layout_marginTop="@dimen/size.10"
+        android:layout_marginBottom="@dimen/size.10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/fragment_home_top_icon_imageview"
+        android:src="@drawable/hand_emoji_main_color_app"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_home_recyclerview"
+        style="@style/MainRecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/fragment_home_top_icon_imageview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
