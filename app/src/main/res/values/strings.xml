@@ -26,5 +26,6 @@
     <string name="error_empty_name">Name of player is empty!</string>
     <string name="error_existing_name">Name already exist</string>
 
-
+    <!-- Accesibility -->
+    <string name="logo_description">App logo</string>
 </resources>
