@@ -17,11 +17,10 @@ import java.util.ArrayList;
 public final class ManageStorage {
     private static final Gson gson = new Gson();
 
-    public static void setPlayerData(Context context, PlayerModel playerDataModel){
+    public static void updatePlayerData(Context context, PlayerModel playerDataModel){
         final String playerDataFileName = context.getResources().getString(R.string.player_data_file_name);
 
-        PlayerModel[] list = getAllPlayersData(context);
-        ArrayList<PlayerModel> arrayList = ManageFingersUtils.arrayToArrayList(list);
+        ArrayList<PlayerModel> arrayList = loadPlayers(context);
 
         for (int i = 0; i < arrayList.size(); i++) {
             if (arrayList.get(i).getName().equals(playerDataModel.getName())) {
@@ -30,7 +29,7 @@ public final class ManageStorage {
             }
         }
 
-        list = ManageFingersUtils.arrayListToArray(arrayList);
+        PlayerModel[] list = ManageFingersUtils.arrayListToArray(arrayList, new PlayerModel[arrayList.size()]);
         final String json = gson.toJson(list);
 
         try{
@@ -45,11 +44,9 @@ public final class ManageStorage {
     public static void saveNewPlayerData(Context context, PlayerModel playerDataModel){
         final String playerDataFileName = context.getResources().getString(R.string.player_data_file_name);
 
-        PlayerModel[] list = getAllPlayersData(context);
-        ArrayList<PlayerModel> arrayList = ManageFingersUtils.arrayToArrayList(list);
+        ArrayList<PlayerModel> arrayList = loadPlayers(context);
         arrayList.add(playerDataModel);
-        list = ManageFingersUtils.arrayListToArray(arrayList);
-
+        final PlayerModel[] list = ManageFingersUtils.arrayListToArray(arrayList, new PlayerModel[arrayList.size()]);
         final String json = gson.toJson(list);
 
         try{
@@ -63,15 +60,11 @@ public final class ManageStorage {
     }
 
     public static ArrayList<PlayerModel> loadPlayers(Context context){
-        return ManageFingersUtils.arrayToArrayList(getAllPlayersData(context));
-    }
-
-    private static PlayerModel[] getAllPlayersData(Context context) {
         final String playerDataFileName = context.getResources().getString(R.string.player_data_file_name);
         final File file = new File(context.getFilesDir(), playerDataFileName);
 
         if (!file.exists() || file.length() == 0){
-            return new PlayerModel[0];
+            return new ArrayList<PlayerModel>();
         }
         try {
             FileInputStream fis = context.openFileInput(playerDataFileName);
@@ -85,15 +78,13 @@ public final class ManageStorage {
             }
             final String contents = stringBuilder.toString();
             final PlayerModel[] data = gson.fromJson(contents, PlayerModel[].class);
-
             fis.close();
             inputStreamReader.close();
             reader.close();
-            return data;
+            return (ArrayList<PlayerModel>) ManageFingersUtils.arrayToArrayList(data);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
-
     }
 }

@@ -2,7 +2,6 @@ package com.example.fingermastergame.ui.playerHistory;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,12 +12,12 @@ import com.example.fingermastergame.ui.playerData.PlayerModel;
 import com.example.fingermastergame.ui.playerData.PlayersListModel;
 import java.util.ArrayList;
 
-public class PlayerIssuesController extends AppCompatActivity {
+public class FingerActivity extends AppCompatActivity {
 
     private String name;
     private PlayersListModel playersListModel;
     private RecyclerView recyclerView;
-    private PlayerIssuesRecyclerAdapter adapter;
+    private FingerRecyclerAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +35,7 @@ public class PlayerIssuesController extends AppCompatActivity {
 
     private void configure() {
         this.playersListModel = new PlayersListModel(loadPlayers());
-        this.adapter = new PlayerIssuesRecyclerAdapter(playersListModel,name);
+        this.adapter = new FingerRecyclerAdapter(playersListModel,name);
         recyclerView.setAdapter(adapter);
     }
 
@@ -44,7 +43,7 @@ public class PlayerIssuesController extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+                super.onBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

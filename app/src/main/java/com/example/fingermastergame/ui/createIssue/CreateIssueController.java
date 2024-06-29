@@ -1,7 +1,6 @@
 package com.example.fingermastergame.ui.createIssue;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,9 +11,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.fingermastergame.R;
 import com.example.fingermastergame.storage.ManageStorage;
-import com.example.fingermastergame.ui.playerData.IssueModel;
+import com.example.fingermastergame.ui.playerData.FingerModel;
 import com.example.fingermastergame.ui.playerData.PlayerModel;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class CreateIssueController extends AppCompatActivity {
@@ -82,14 +82,15 @@ public class CreateIssueController extends AppCompatActivity {
             public void onClick(View view) {
                 final String issue = String.valueOf(issueTextView.getText());
                 //final int fingers = Integer.parseInt(numberTextView.getText().toString());
-                final IssueModel issueModel = new IssueModel(issue);
+                final Date date = new Date();
+                final FingerModel fingerModel = new FingerModel(issue, date);
                 final String playerName = playerModel.getName();
 
                 if(issue.isBlank() || issue == null){
                     showToast(getBaseContext().getString(R.string.issue_empty));
                 }else{
                     //updatePlayerData(playerName, fingers, issueModel);
-                    updatePlayerData(playerName, 1, issueModel);
+                    updatePlayerData(playerName, 1, fingerModel);
                     finish();
                 }
             }
@@ -121,14 +122,14 @@ public class CreateIssueController extends AppCompatActivity {
         Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
     }
 
-    private void updatePlayerData(String playerName, int fingers, IssueModel issueModel) {
+    private void updatePlayerData(String playerName, int fingers, FingerModel fingerModel) {
         //save data
-        playerModel.setIssue(issueModel);
+        playerModel.setIssue(fingerModel);
         savePlayerData(playerModel);
     }
 
     private void savePlayerData(PlayerModel playerModel) {
-        ManageStorage.setPlayerData(getApplicationContext(),playerModel);
+        ManageStorage.updatePlayerData(getApplicationContext(),playerModel);
     }
     private ArrayList<PlayerModel> loadPlayers() {
         ArrayList<PlayerModel> list;

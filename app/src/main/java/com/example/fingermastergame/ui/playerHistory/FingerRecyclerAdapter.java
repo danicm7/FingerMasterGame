@@ -12,7 +12,7 @@ import com.example.fingermastergame.ui.utils.ManageFingersUtils;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssuesRecyclerAdapter.ViewHolder> {
+public class FingerRecyclerAdapter extends RecyclerView.Adapter<FingerRecyclerAdapter.ViewHolder> {
 
     private PlayersListModel playersListModel;
     private ArrayList<String> issues;
@@ -30,7 +30,7 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
             return textView;
         }
     }
-    public PlayerIssuesRecyclerAdapter(PlayersListModel playersListModel, String playerName) {
+    public FingerRecyclerAdapter(PlayersListModel playersListModel, String playerName) {
         this.playersListModel = playersListModel;
         this.playerName = playerName;
         configure();
@@ -59,6 +59,6 @@ public class PlayerIssuesRecyclerAdapter extends RecyclerView.Adapter<PlayerIssu
         final String issues  = this.playersListModel.getIssuesByName(playerName);
         final String[] issuesArray =
                 !Objects.equals(issues, "") ? issues.split("\n") : new String[0];
-        this.issues = ManageFingersUtils.arrayToArrayList(issuesArray);
+        this.issues = (ArrayList<String>) ManageFingersUtils.arrayToArrayList(issuesArray);
     }
 }
