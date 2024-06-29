@@ -1,8 +1,6 @@
 package com.example.fingermastergame.ui.createIssue;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,21 +9,12 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.fingermastergame.R;
-import com.example.fingermastergame.ui.playerData.IssueModel;
+import com.example.fingermastergame.storage.ManageStorage;
+import com.example.fingermastergame.ui.playerData.FingerModel;
 import com.example.fingermastergame.ui.playerData.PlayerModel;
-import com.example.fingermastergame.ui.utils.ManageFingersUtils;
-import com.google.gson.Gson;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class CreateIssueController extends AppCompatActivity {
@@ -93,14 +82,15 @@ public class CreateIssueController extends AppCompatActivity {
             public void onClick(View view) {
                 final String issue = String.valueOf(issueTextView.getText());
                 //final int fingers = Integer.parseInt(numberTextView.getText().toString());
-                final IssueModel issueModel = new IssueModel(issue);
+                final Date date = new Date();
+                final FingerModel fingerModel = new FingerModel(issue, date);
                 final String playerName = playerModel.getName();
 
                 if(issue.isBlank() || issue == null){
                     showToast(getBaseContext().getString(R.string.issue_empty));
                 }else{
                     //updatePlayerData(playerName, fingers, issueModel);
-                    updatePlayerData(playerName, 1, issueModel);
+                    updatePlayerData(playerName, 1, fingerModel);
                     finish();
                 }
             }
@@ -132,72 +122,23 @@ public class CreateIssueController extends AppCompatActivity {
         Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
     }
 
-    private void updatePlayerData(String playerName, int fingers, IssueModel issueModel) {
+    private void updatePlayerData(String playerName, int fingers, FingerModel fingerModel) {
         //save data
-        playerModel.setIssue(issueModel);
+        playerModel.setIssue(fingerModel);
         savePlayerData(playerModel);
     }
 
     private void savePlayerData(PlayerModel playerModel) {
-        ArrayList<PlayerModel> arrayList = loadPlayers();
-        final Gson gson = new Gson();
-        final String playerDataFileName = getResources().getString(R.string.player_data_file_name);
-
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i).getName().equals(playerModel.getName())) {
-                arrayList.remove(i);
-                arrayList.add(playerModel);
-            }
-        }
-
-        final PlayerModel[] list = ManageFingersUtils.arrayListToArray(arrayList);
-        final String json = gson.toJson(list);
-
-        try{
-            FileOutputStream fos = openFileOutput(playerDataFileName, Context.MODE_PRIVATE);
-            fos.write(json.getBytes());
-            fos.flush();
-            fos.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+        ManageStorage.updatePlayerData(getApplicationContext(),playerModel);
     }
     private ArrayList<PlayerModel> loadPlayers() {
-        ArrayList<PlayerModel> playersList = new ArrayList<PlayerModel>();
-        final File file = new File(getFilesDir(), getResources().getString(R.string.player_data_file_name));
-        final Gson gson = new Gson();
-        if (!file.exists()){
-            return playersList;
-        }
-        try {
-            final FileInputStream fis = openFileInput(file.getName());
-            final InputStreamReader inputStreamReader = new InputStreamReader(fis, StandardCharsets.UTF_8);
-            final StringBuilder stringBuilder = new StringBuilder();
-            final BufferedReader reader = new BufferedReader(inputStreamReader);
-            final ManageFingersUtils utils =  ManageFingersUtils.getInstance();
-            String line = reader.readLine();
-            while (line != null) {
-                stringBuilder.append(line).append('\n');
-                line = reader.readLine();
-            }
-            final String contents = stringBuilder.toString();
-            final PlayerModel[] data = gson.fromJson(contents, PlayerModel[].class);
-
-            fis.close();
-            inputStreamReader.close();
-            reader.close();
-            playersList = utils.arrayToArrayList(data);
-            return playersList;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return playersList;
-        }
+        ArrayList<PlayerModel> list;
+        list = ManageStorage.loadPlayers(getApplicationContext());
+        return list;
     }
     private boolean checkPlusButtons(int currentValue) {
         final int maxValue = this.getResources().getInteger(R.integer.max_fingers_edit);
         final int minValue = this.getResources().getInteger(R.integer.min_fingers_edit);
-
         return currentValue <= maxValue && currentValue >= minValue;
     }
 

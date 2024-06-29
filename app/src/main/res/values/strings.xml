@@ -9,7 +9,7 @@
     <string name="action_settings">Ajustes</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_players_list">Player Data</string>
+    <string name="menu_players_list">Fingers</string>
     <string name="menu_acces_history">Access History</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -23,6 +23,7 @@
     <string name="new_player_name_tittle">New player name:</string>
     <string name="new_player_name_hint">Player name</string>
     <string name="player_data_file_name">playersData.json</string>
+    <string name="data_access_file_name">dataAccess.json</string>
     <string name="error_empty_name">Name of player is empty!</string>
     <string name="error_existing_name">Name already exist</string>
 

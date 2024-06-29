@@ -50,7 +50,7 @@ public class PlayersListRecyclerAdapter extends RecyclerView.Adapter<PlayersList
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent myIntent = new Intent(view.getContext(), PlayerIssuesController.class);
+                    Intent myIntent = new Intent(view.getContext(), FingerActivity.class);
                     myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     myIntent.putExtra("name", getTextView().getText());
                     view.getContext().startActivity(myIntent);
